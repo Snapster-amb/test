@@ -3,6 +3,8 @@ version: 3.9.3
 name: Jekyll • Simple, blog-aware, static sites
 description: Transform your plain text into static websites and blogs
 timezone: America/Los_Angeles
+url: "https://snapster-amb.github.io/test/"
+baseurl: "https://snapster-amb.github.io/test/"
 logo: "/img/logo-2x.png"
 collections:
   docs:
