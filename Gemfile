@@ -18,9 +18,15 @@ gem "minima", "~> 2.0"
 # gem "github-pages", group: :jekyll_plugins
 
 # If you have any plugins, put them here!
-# group :jekyll_plugins do
-#   gem "jekyll-feed", "~> 0.6"
-# end
+group :jekyll_plugins do
+  gem "jekyll-avatar"
+  gem "jekyll-feed", "~> 0.9"
+  gem "jekyll-mentions"
+  gem "jekyll-redirect-from"
+  gem "jekyll-seo-tag"
+  gem "jekyll-sitemap"
+  gem "jemoji"
+end
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
@@ -39,12 +45,6 @@ gem "kramdown-parser-gfm"
 # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
-
-gem "jekyll-avatar"
-gem "jekyll-mentions"
-gem "jekyll-seo-tag"
-gem "jekyll-sitemap"
-gem "jemoji"
 
 gem "jekyll-coffeescript"
 gem "jekyll-docs"
