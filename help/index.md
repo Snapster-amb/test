@@ -5,7 +5,7 @@ title: Getting Help
 
 Need help with Jekyll? Try these resources.
 
-### [Documentation](/docs/home/)
+### [Documentation]({{ site.baseurl }}/docs/home/)
 
 Start with our official guide to Jekyll covering installation, writing, customization, deployment, and more.
 
@@ -30,16 +30,16 @@ Jekyll IRC channel.
 
 Learn from the source of others, you'll find plenty of [jekyll sites](https://github.com/topics/jekyll-site) and [jekyll themes](https://github.com/topics/jekyll-themes) carefully handcrafted on GitHub.
 
-### [Tutorials](/tutorials/home)
+### [Tutorials]({{ site.baseurl }}/tutorials/home)
 
 Similar to documentation, but more detailed scenario-based walk-throughs covering a variety of topics.
 
-### [Upgrading](/docs/upgrading/)
+### [Upgrading]({{ site.baseurl }}/docs/upgrading/)
 
 Did you recently upgrade from Jekyll 1 to 2 or from Jekyll 2 to 3?
 Known breaking changes are listed in the upgrading docs.
 
-### [Jekyllconf](/jekyllconf/)
+### [Jekyllconf]({{ site.baseurl }}/jekyllconf/)
 
 Watch videos from members of the Jekyll community speak about interesting use cases, tricks they've learned or meta Jekyll topics.
 
