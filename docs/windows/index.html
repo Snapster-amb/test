@@ -1,0 +1,776 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="generator" content="Jekyll v3.9.3">
+  <link type="application/atom+xml" rel="alternate" href="http://0.0.0.0:4000/feed.xml" title="Jekyll • Simple, blog-aware, static sites" />
+  <link rel="alternate" type="application/atom+xml" title="Recent commits to Jekyll’s master branch" href="/commits/master.atom">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic,900">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
+  <link rel="stylesheet" href="/css/screen.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Jekyll on Windows | Jekyll • Simple, blog-aware, static sites</title>
+<meta name="generator" content="Jekyll v3.9.3" />
+<meta property="og:title" content="Jekyll on Windows" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="While Windows is not an officially-supported platform, it can be used to run Jekyll with the proper tweaks. This page aims to collect some of the general knowledge and lessons that have been unearthed by Windows users." />
+<meta property="og:description" content="While Windows is not an officially-supported platform, it can be used to run Jekyll with the proper tweaks. This page aims to collect some of the general knowledge and lessons that have been unearthed by Windows users." />
+<link rel="canonical" href="http://0.0.0.0:4000/docs/windows/" />
+<meta property="og:url" content="http://0.0.0.0:4000/docs/windows/" />
+<meta property="og:site_name" content="Jekyll • Simple, blog-aware, static sites" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2023-07-30T20:47:52-07:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jekyll on Windows" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-30T20:47:52-07:00","datePublished":"2023-07-30T20:47:52-07:00","description":"While Windows is not an officially-supported platform, it can be used to run Jekyll with the proper tweaks. This page aims to collect some of the general knowledge and lessons that have been unearthed by Windows users.","headline":"Jekyll on Windows","mainEntityOfPage":{"@type":"WebPage","@id":"http://0.0.0.0:4000/docs/windows/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://0.0.0.0:4000/img/logo-2x.png"}},"url":"http://0.0.0.0:4000/docs/windows/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  <!--[if lt IE 9]>
+  <script src="/js/html5shiv.min.js"></script>
+  <script src="/js/respond.min.js"></script>
+  <![endif]-->
+</head>
+
+
+<body class="wrap">
+  <header>
+  <div class="flexbox">
+    <div class="center-on-mobiles">
+      <h1>
+        <a href="/" class="logo">
+          <span class="sr-only">Jekyll</span>
+          <img src="/img/logo-2x.png" width="140" height="65" alt="Jekyll Logo">
+        </a>
+      </h1>
+    </div>
+    <nav class="main-nav hide-on-mobiles">
+      <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="current">
+    <a href="/docs/home/">Docs</a>
+  </li>
+  <li class="">
+    <a href="/news/">News</a>
+  </li>
+  <li class="">
+    <a href="/help/">Help</a>
+  </li>
+</ul>
+
+    </nav>
+    <div class="search hide-on-mobiles">
+      <input type="text" id="docsearch-input" placeholder="Search the docs…">
+
+    </div>
+    <div class="meta hide-on-mobiles">
+      <ul>
+        <li>
+          <a href="/releases/tag/v3.9.3">v3.9.3</a>
+        </li>
+        <li>
+          <a href="">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <nav class="mobile-nav show-on-mobiles">
+    <ul>
+  <li class="">
+    <a href="/">Home</a>
+  </li>
+  <li class="current">
+    <a href="/docs/home/">Docs</a>
+  </li>
+  <li class="">
+    <a href="/news/">News</a>
+  </li>
+  <li class="">
+    <a href="/help/">Help</a>
+  </li>
+  <li>
+    <a href="">GitHub</a>
+  </li>
+</ul>
+
+  </nav>
+</header>
+
+
+    <section class="docs">
+    <div class="grid">
+
+      <div class="docs-nav-mobile unit whole show-on-mobiles">
+  <select onchange="if (this.value) window.location.href=this.value">
+    <option value="">Navigate the docs…</option>
+    
+    <optgroup label="Getting Started">
+      
+  
+  
+  <option value="/docs/home/">Welcome</option>
+
+  
+  
+  <option value="/docs/quickstart/">Quick-start guide</option>
+
+  
+  
+  <option value="/docs/installation/">Installation</option>
+
+  
+  
+  <option value="/docs/windows/">Jekyll on Windows</option>
+
+  
+  
+  <option value="/docs/usage/">Basic Usage</option>
+
+  
+  
+  <option value="/docs/structure/">Directory structure</option>
+
+  
+  
+  <option value="/docs/configuration/">Configuration</option>
+
+
+    </optgroup>
+    
+    <optgroup label="Your Content">
+      
+  
+  
+  <option value="/docs/frontmatter/">Front Matter</option>
+
+  
+  
+  <option value="/docs/posts/">Writing posts</option>
+
+  
+  
+  <option value="/docs/drafts/">Working with drafts</option>
+
+  
+  
+  <option value="/docs/pages/">Creating pages</option>
+
+  
+  
+  <option value="/docs/static-files/">Static Files</option>
+
+  
+  
+  <option value="/docs/variables/">Variables</option>
+
+  
+  
+  <option value="/docs/collections/">Collections</option>
+
+  
+  
+  <option value="/docs/datafiles/">Data Files</option>
+
+  
+  
+  <option value="/docs/assets/">Assets</option>
+
+  
+  
+  <option value="/docs/migrations/">Blog migrations</option>
+
+
+    </optgroup>
+    
+    <optgroup label="Customization">
+      
+  
+  
+  <option value="/docs/templates/">Templates</option>
+
+  
+  
+  <option value="/docs/includes/">Includes</option>
+
+  
+  
+  <option value="/docs/permalinks/">Permalinks</option>
+
+  
+  
+  <option value="/docs/pagination/">Pagination</option>
+
+  
+  
+  <option value="/docs/plugins/">Plugins</option>
+
+  
+  
+  <option value="/docs/themes/">Themes</option>
+
+  
+  
+  <option value="/docs/extras/">Extras</option>
+
+
+    </optgroup>
+    
+    <optgroup label="Deployment">
+      
+  
+  
+  <option value="/docs/github-pages/">GitHub Pages</option>
+
+  
+  
+  <option value="/docs/deployment-methods/">Deployment methods</option>
+
+  
+  
+  <option value="/docs/continuous-integration/">Continuous Integration</option>
+
+
+    </optgroup>
+    
+    <optgroup label="Miscellaneous">
+      
+  
+  
+  <option value="/docs/troubleshooting/">Troubleshooting</option>
+
+  
+  
+  <option value="/docs/sites/">Sites using Jekyll</option>
+
+  
+  
+  <option value="/docs/resources/">Resources</option>
+
+  
+  
+  <option value="/docs/upgrading/0-to-2/">Upgrading from 0.x to 2.x</option>
+
+  
+  
+  <option value="/docs/upgrading/2-to-3/">Upgrading from 2.x to 3.x</option>
+
+
+    </optgroup>
+    
+    <optgroup label="Meta">
+      
+  
+  
+  <option value="/docs/contributing/">Contributing</option>
+
+  
+  
+  <option value="/docs/maintaining/">Maintaining Jekyll</option>
+
+  
+  
+  <option value="/docs/conduct/">Code of Conduct</option>
+
+  
+  
+  <option value="/docs/history/">History</option>
+
+
+    </optgroup>
+    
+  </select>
+</div>
+
+
+      <div class="unit four-fifths">
+        <article>
+          <div class="improve right hide-on-mobiles">
+            <a href="https://github.com/jekyll/jekyll/edit/master/docs/_docs/windows.md"><i class="fa fa-pencil"></i> &nbsp;Improve this page</a>
+          </div>
+          <h1>Jekyll on Windows</h1>
+          <p>While Windows is not an officially-supported platform, it can be used to run Jekyll with the proper tweaks. This page aims to collect some of the general knowledge and lessons that have been unearthed by Windows users.</p>
+
+<h2 id="installing-jekyll">Installing Jekyll</h2>
+
+<p>If you are using Windows 10 Anniversary Update, the easiest way to run Jekyll is by <a href="https://msdn.microsoft.com/en-us/commandline/wsl/install_guide">installing</a> the new Bash on Ubuntu on Windows.</p>
+
+<h3 id="installation-via-bash-on-windows-10">Installation via Bash on Windows 10</h3>
+
+<p><em>Note:</em> You must have <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about">Bash on Ubuntu on Windows</a> enabled.</p>
+
+<p>First let’s make sure all our packages / repositories are up to date. Open a new Command Prompt instance, and type the following:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bash
+</code></pre></div></div>
+<p>Your Command Prompt instance should now be a Bash instance. Now we must update our repo lists and packages.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update <span class="nt">-y</span> <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get upgrade <span class="nt">-y</span>
+</code></pre></div></div>
+<p>Now we can install Ruby. To do this we will use a repository from <a href="https://www.brightbox.com/docs/ruby/ubuntu/">BrightBox</a>, which hosts optimized versions of Ruby for Ubuntu.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-add-repository ppa:brightbox/ruby-ng
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get <span class="nb">install </span>ruby2.3 ruby2.3-dev build-essential dh-autoreconf
+</code></pre></div></div>
+
+<p>Next let’s update our Ruby gems:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>gem update
+</code></pre></div></div>
+
+<p>Now all that is left to do is install Jekyll.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>gem <span class="nb">install </span>jekyll bundler
+</code></pre></div></div>
+
+<p>Check if Jekyll installed properly by running:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll <span class="nt">-v</span>
+</code></pre></div></div>
+
+<p><strong>And that’s it!</strong></p>
+
+<p>To start a new project named <code class="language-plaintext highlighter-rouge">my_blog</code>, just run:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll new my_blog
+</code></pre></div></div>
+
+<p>You can make sure time management is working properly by inspecting your <code class="language-plaintext highlighter-rouge">_posts</code> folder. You should see a markdown file with the current date in the filename.</p>
+
+<div class="note info">
+  <h5>Non-superuser account issues</h5>
+  <p>If the `jekyll new` command prints the error "Your user account isn't allowed to install to the system RubyGems", see the "Running Jekyll as Non-Superuser" instructions in <a href="/docs/troubleshooting/#no-sudo">Troubleshooting</a>.</p>
+</div>
+
+<p><strong>Note:</strong> Bash on Ubuntu on Windows is still under development, so you may run into issues.</p>
+
+<h3 id="installation-via-rubyinstaller">Installation via RubyInstaller</h3>
+
+<p><a href="https://rubyinstaller.org/">RubyInstaller</a> is a self-contained Windows-based installer that includes the Ruby language, an execution environment, important documentation, and more.</p>
+
+<ol>
+  <li>Download and Install a package manager version from <a href="https://rubyinstaller.org/downloads/">RubyInstaller Downloads</a>.</li>
+  <li>Install Jekyll and Bundler via a command prompt window: <code class="language-plaintext highlighter-rouge">gem install jekyll bundler</code></li>
+  <li>Check if Jekyll installed properly: <code class="language-plaintext highlighter-rouge">jekyll -v</code></li>
+</ol>
+
+<h3 id="installation-via-chocolatey">Installation via Chocolatey</h3>
+
+<p>A quick way to install Jekyll using Chocolatey is to follow the <a href="https://davidburela.wordpress.com/2015/11/28/easily-install-jekyll-on-windows-with-3-command-prompt-entries-and-chocolatey/">installation instructions by David Burela</a>:</p>
+
+<ol>
+  <li>Install a package manager for Windows called <a href="https://chocolatey.org/install" title="Package manager for Windows">Chocolatey</a></li>
+  <li>Install Ruby via Chocolatey: <code class="language-plaintext highlighter-rouge">choco install ruby -y</code></li>
+  <li>Reopen a command prompt and install Jekyll: <code class="language-plaintext highlighter-rouge">gem install jekyll</code></li>
+</ol>
+
+<p>Updates in the infrastructure of Ruby may cause SSL errors when attempting to use <code class="language-plaintext highlighter-rouge">gem install</code> with versions of the RubyGems package older than 2.6. (The RubyGems package installed via the Chocolatey tool is version 2.3) If you have installed an older version, you can update the RubyGems package using the directions <a href="http://guides.rubygems.org/ssl-certificate-update/#installing-using-update-packages">here</a>.</p>
+
+<h3 id="installing-github-pages-via-chocolatey">Installing <em>github-pages</em> via Chocolatey</h3>
+
+<p>This section is part of an article written by <a href="https://jwillmer.de/blog/tutorial/how-to-install-jekyll-and-pages-gem-on-windows-10-x46" title="Installation instructions by Jens Willmer">Jens Willmer</a>. To follow the instructions you need to have <a href="https://chocolatey.org/install" title="Package manager for Windows">Chocolatey</a> installed on your system. If you already have a version of Ruby installed you need to uninstall it before you can continue.</p>
+
+<h4 id="install-ruby-and-ruby-development-kit">Install Ruby and Ruby development kit</h4>
+
+<p>Open a command prompt and execute the following commands:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">choco install ruby -version 2.2.4</code></li>
+  <li><code class="language-plaintext highlighter-rouge">choco install ruby2.devkit</code> - <em>needed for compilation of json gem</em></li>
+</ul>
+
+<h4 id="configure-ruby-development-kit">Configure Ruby development kit</h4>
+
+<p>The development kit did not set the environment path for Ruby so we need to do it.</p>
+
+<ul>
+  <li>Open command prompt in <code class="language-plaintext highlighter-rouge">C:\tools\DevKit2</code></li>
+  <li>Execute <code class="language-plaintext highlighter-rouge">ruby dk.rb init</code> to create a file called <code class="language-plaintext highlighter-rouge">config.yml</code></li>
+  <li>Edit the <code class="language-plaintext highlighter-rouge">config.yml</code> file and include the path to Ruby <code class="language-plaintext highlighter-rouge">- C:/tools/ruby22</code></li>
+  <li>Execute the following command to set the path: <code class="language-plaintext highlighter-rouge">ruby dk.rb install</code></li>
+</ul>
+
+<h4 id="nokogiri-gem-installation">Nokogiri gem installation</h4>
+
+<p>This gem is also needed in the github-pages and to get it running on Windows x64 we have to install a few things.</p>
+
+<p><strong>Note:</strong> In the current <a href="https://github.com/sparklemotion/nokogiri/issues/1456#issuecomment-206481794" title="Nokogiri fails to install on Ruby 2.3 for Windows">pre release</a> it works out of the box with Windows x64 but this version is not referenced in the github-pages.</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>choco <span class="nb">install </span>libxml2 <span class="nt">-Source</span> <span class="s2">"https://www.nuget.org/api/v2/"</span>
+
+choco <span class="nb">install </span>libxslt <span class="nt">-Source</span> <span class="s2">"https://www.nuget.org/api/v2/"</span>
+
+choco <span class="nb">install </span>libiconv <span class="nt">-Source</span> <span class="s2">"https://www.nuget.org/api/v2/
+
+gem install nokogiri --^
+   --with-xml2-include=C:</span><span class="se">\C</span><span class="s2">hocolatey</span><span class="se">\l</span><span class="s2">ib</span><span class="se">\l</span><span class="s2">ibxml2.2.7.8.7</span><span class="se">\b</span><span class="s2">uild</span><span class="se">\n</span><span class="s2">ative</span><span class="se">\i</span><span class="s2">nclude^
+   --with-xml2-lib=C:</span><span class="se">\C</span><span class="s2">hocolatey</span><span class="se">\l</span><span class="s2">ib</span><span class="se">\l</span><span class="s2">ibxml2.redist.2.7.8.7</span><span class="se">\b</span><span class="s2">uild</span><span class="se">\n</span><span class="s2">ative</span><span class="se">\b</span><span class="s2">in</span><span class="se">\v</span><span class="s2">110</span><span class="se">\x</span><span class="s2">64</span><span class="se">\R</span><span class="s2">elease</span><span class="se">\d</span><span class="s2">ynamic</span><span class="se">\c</span><span class="s2">decl^
+   --with-iconv-include=C:</span><span class="se">\C</span><span class="s2">hocolatey</span><span class="se">\l</span><span class="s2">ib</span><span class="se">\l</span><span class="s2">ibiconv.1.14.0.11</span><span class="se">\b</span><span class="s2">uild</span><span class="se">\n</span><span class="s2">ative</span><span class="se">\i</span><span class="s2">nclude^
+   --with-iconv-lib=C:</span><span class="se">\C</span><span class="s2">hocolatey</span><span class="se">\l</span><span class="s2">ib</span><span class="se">\l</span><span class="s2">ibiconv.redist.1.14.0.11</span><span class="se">\b</span><span class="s2">uild</span><span class="se">\n</span><span class="s2">ative</span><span class="se">\b</span><span class="s2">in</span><span class="se">\v</span><span class="s2">110</span><span class="se">\x</span><span class="s2">64</span><span class="se">\R</span><span class="s2">elease</span><span class="se">\d</span><span class="s2">ynamic</span><span class="se">\c</span><span class="s2">decl^
+   --with-xslt-include=C:</span><span class="se">\C</span><span class="s2">hocolatey</span><span class="se">\l</span><span class="s2">ib</span><span class="se">\l</span><span class="s2">ibxslt.1.1.28.0</span><span class="se">\b</span><span class="s2">uild</span><span class="se">\n</span><span class="s2">ative</span><span class="se">\i</span><span class="s2">nclude^
+   --with-xslt-lib=C:</span><span class="se">\C</span><span class="s2">hocolatey</span><span class="se">\l</span><span class="s2">ib</span><span class="se">\l</span><span class="s2">ibxslt.redist.1.1.28.0</span><span class="se">\b</span><span class="s2">uild</span><span class="se">\n</span><span class="s2">ative</span><span class="se">\b</span><span class="s2">in</span><span class="se">\v</span><span class="s2">110</span><span class="se">\x</span><span class="s2">64</span><span class="se">\R</span><span class="s2">elease</span><span class="se">\d</span><span class="s2">ynamic
+</span></code></pre></div></div>
+
+<h4 id="install-github-pages">Install github-pages</h4>
+
+<ul>
+  <li>Open command prompt and install <a href="http://bundler.io/" title="Ruby Dependencie Manager">Bundler</a>: <code class="language-plaintext highlighter-rouge">gem install bundler</code></li>
+  <li>Create a file called <code class="language-plaintext highlighter-rouge">Gemfile</code> without any extension in your root directory of your blog</li>
+  <li>Copy &amp; paste the two lines into the file:</li>
+</ul>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">source</span> <span class="s1">'https://rubygems.org'</span>
+<span class="n">gem</span> <span class="s1">'github-pages'</span><span class="p">,</span> <span class="ss">group: :jekyll_plugins</span>
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Note:</strong> We use an unsecure connection because SSL throws exceptions in the version of Ruby</li>
+  <li>Open a command prompt, target your local blog repository root, and install github-pages: <code class="language-plaintext highlighter-rouge">bundle install</code></li>
+</ul>
+
+<p>After this process you should have github-pages installed on your system and you can host your blog again with <code class="language-plaintext highlighter-rouge">jekyll s</code>.
+There will be a warning on startup that you should include <code class="language-plaintext highlighter-rouge">gem 'wdm', '&gt;= 0.1.0' if Gem.win_platform?</code> to your <code class="language-plaintext highlighter-rouge">Gemfile</code> but I could not get <code class="language-plaintext highlighter-rouge">jekyll s</code> working if I include that line so for the moment I ignore that warning.</p>
+
+<p>In the future the installation process of the github-pages should be as simple as the setup of the blog. But as long as the new version of the Nokogiri (<a href="https://github.com/sparklemotion/nokogiri/releases" title="Nokogiri Releases">v1.6.8</a>) is not stable and referenced, it is work to get it up and running on Windows.</p>
+
+<p>For a more conventional way of installing Jekyll you can follow this <a href="https://labs.sverrirs.com/jekyll/">complete guide to install Jekyll 3 on Windows by Sverrir Sigmundarson</a>.</p>
+
+<p>Optionally you can use <a href="https://github.com/KeJunMao/fastjekyll#autoinstall-jekyll-for-windows">Autoinstall Jekyll for Windows</a>.</p>
+
+<h2 id="encoding">Encoding</h2>
+
+<p>If you use UTF-8 encoding, make sure that no <code class="language-plaintext highlighter-rouge">BOM</code> header characters exist in your files or very, very bad things will happen to
+Jekyll. This is especially relevant when you’re running Jekyll on Windows.</p>
+
+<p>Additionally, you might need to change the code page of the console window to UTF-8 in case you get a “Liquid Exception: Incompatible character encoding” error during the site generation process. It can be done with the following command:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chcp 65001
+</code></pre></div></div>
+
+<h2 id="time-zone-management">Time-Zone Management</h2>
+
+<p>Since Windows doesn’t have a native source of zoneinfo data, the Ruby Interpreter would not understand IANA Timezones and hence using them had the <code class="language-plaintext highlighter-rouge">TZ</code> environment variable default to UTC/GMT 00:00.
+Though Windows users could alternatively define their blog’s timezone by setting the key to use POSIX format of defining timezones, it wasn’t as user-friendly when it came to having the clock altered to changing DST-rules.</p>
+
+<p>Jekyll now uses a rubygem to internally configure Timezone based on established <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">IANA Timezone Database</a>.
+While ‘new’ blogs created with Jekyll v3.4 and greater, will have the following added to their ‘Gemfile’ by default, existing sites <em>will</em> have to update their ‘Gemfile’ (and installed) to enable development on Windows:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem</span>
+<span class="c1"># and associated library.</span>
+<span class="n">platforms</span> <span class="ss">:mingw</span><span class="p">,</span> <span class="ss">:x64_mingw</span><span class="p">,</span> <span class="ss">:mswin</span><span class="p">,</span> <span class="ss">:jruby</span> <span class="k">do</span>
+  <span class="n">gem</span> <span class="s2">"tzinfo"</span><span class="p">,</span> <span class="s2">"&gt;= 1"</span><span class="p">,</span> <span class="s2">"&lt; 3"</span>
+  <span class="n">gem</span> <span class="s2">"tzinfo-data"</span>
+<span class="k">end</span>
+</code></pre></div></div>
+
+<h2 id="auto-regeneration">Auto Regeneration</h2>
+
+<p>Jekyll uses the <code class="language-plaintext highlighter-rouge">listen</code> gem to watch for changes when the <code class="language-plaintext highlighter-rouge">--watch</code> switch is specified during a build or serve. While <code class="language-plaintext highlighter-rouge">listen</code> has built-in support for UNIX systems, it may require an extra gem for compatibility with Windows.</p>
+
+<p>Add the following to the Gemfile for your site if you have issues with auto-regeneration on Windows alone:</p>
+
+<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">gem</span> <span class="s1">'wdm'</span><span class="p">,</span> <span class="s1">'~&gt; 0.1.1'</span> <span class="k">if</span> <span class="no">Gem</span><span class="p">.</span><span class="nf">win_platform?</span>
+</code></pre></div></div>
+
+<p>You may first have to download and install the <a href="https://rubyinstaller.org/downloads/">Ruby DevKit</a> by following <a href="https://github.com/oneclick/rubyinstaller/wiki/Development-Kit">the instructions here</a>.</p>
+
+          
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+    <div class="section-nav">
+      <div class="left align-right">
+          
+            
+            
+            <a href="/docs/installation/" class="prev">Back</a>
+          
+      </div>
+      <div class="right align-left">
+          
+            
+            
+            <a href="/docs/usage/" class="next">Next</a>
+          
+      </div>
+    </div>
+    <div class="clear"></div>
+    
+        </article>
+      </div>
+
+      <div class="unit one-fifth hide-on-mobiles">
+  <aside>
+    
+    <h4>Getting Started</h4>
+    <ul>
+
+  
+  
+  <li class=""><a href="/docs/home/">Welcome</a></li>
+
+  
+  
+  <li class=""><a href="/docs/quickstart/">Quick-start guide</a></li>
+
+  
+  
+  <li class=""><a href="/docs/installation/">Installation</a></li>
+
+  
+  
+  <li class="current"><a href="/docs/windows/">Jekyll on Windows</a></li>
+
+  
+  
+  <li class=""><a href="/docs/usage/">Basic Usage</a></li>
+
+  
+  
+  <li class=""><a href="/docs/structure/">Directory structure</a></li>
+
+  
+  
+  <li class=""><a href="/docs/configuration/">Configuration</a></li>
+
+</ul>
+
+    
+    <h4>Your Content</h4>
+    <ul>
+
+  
+  
+  <li class=""><a href="/docs/frontmatter/">Front Matter</a></li>
+
+  
+  
+  <li class=""><a href="/docs/posts/">Writing posts</a></li>
+
+  
+  
+  <li class=""><a href="/docs/drafts/">Working with drafts</a></li>
+
+  
+  
+  <li class=""><a href="/docs/pages/">Creating pages</a></li>
+
+  
+  
+  <li class=""><a href="/docs/static-files/">Static Files</a></li>
+
+  
+  
+  <li class=""><a href="/docs/variables/">Variables</a></li>
+
+  
+  
+  <li class=""><a href="/docs/collections/">Collections</a></li>
+
+  
+  
+  <li class=""><a href="/docs/datafiles/">Data Files</a></li>
+
+  
+  
+  <li class=""><a href="/docs/assets/">Assets</a></li>
+
+  
+  
+  <li class=""><a href="/docs/migrations/">Blog migrations</a></li>
+
+</ul>
+
+    
+    <h4>Customization</h4>
+    <ul>
+
+  
+  
+  <li class=""><a href="/docs/templates/">Templates</a></li>
+
+  
+  
+  <li class=""><a href="/docs/includes/">Includes</a></li>
+
+  
+  
+  <li class=""><a href="/docs/permalinks/">Permalinks</a></li>
+
+  
+  
+  <li class=""><a href="/docs/pagination/">Pagination</a></li>
+
+  
+  
+  <li class=""><a href="/docs/plugins/">Plugins</a></li>
+
+  
+  
+  <li class=""><a href="/docs/themes/">Themes</a></li>
+
+  
+  
+  <li class=""><a href="/docs/extras/">Extras</a></li>
+
+</ul>
+
+    
+    <h4>Deployment</h4>
+    <ul>
+
+  
+  
+  <li class=""><a href="/docs/github-pages/">GitHub Pages</a></li>
+
+  
+  
+  <li class=""><a href="/docs/deployment-methods/">Deployment methods</a></li>
+
+  
+  
+  <li class=""><a href="/docs/continuous-integration/">Continuous Integration</a></li>
+
+</ul>
+
+    
+    <h4>Miscellaneous</h4>
+    <ul>
+
+  
+  
+  <li class=""><a href="/docs/troubleshooting/">Troubleshooting</a></li>
+
+  
+  
+  <li class=""><a href="/docs/sites/">Sites using Jekyll</a></li>
+
+  
+  
+  <li class=""><a href="/docs/resources/">Resources</a></li>
+
+  
+  
+  <li class=""><a href="/docs/upgrading/0-to-2/">Upgrading from 0.x to 2.x</a></li>
+
+  
+  
+  <li class=""><a href="/docs/upgrading/2-to-3/">Upgrading from 2.x to 3.x</a></li>
+
+</ul>
+
+    
+    <h4>Meta</h4>
+    <ul>
+
+  
+  
+  <li class=""><a href="/docs/contributing/">Contributing</a></li>
+
+  
+  
+  <li class=""><a href="/docs/maintaining/">Maintaining Jekyll</a></li>
+
+  
+  
+  <li class=""><a href="/docs/conduct/">Code of Conduct</a></li>
+
+  
+  
+  <li class=""><a href="/docs/history/">History</a></li>
+
+</ul>
+
+    
+  </aside>
+</div>
+
+
+      <div class="clear"></div>
+
+    </div>
+  </section>
+
+
+  <footer>
+  <div class="grid">
+    <div class="unit one-third center-on-mobiles">
+      <p>The contents of this website are <br />&copy;&nbsp;2023 under the terms of the <a href="/blob/master/LICENSE">MIT&nbsp;License</a>.</p>
+    </div>
+    <div class="unit two-thirds align-right center-on-mobiles">
+      <p>
+        Proudly hosted by
+        <a href="https://github.com">
+          <img src="/img/footer-logo.png" width="100" height="30" alt="GitHub • Social coding">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+  <script>
+  var anchorForId = function (id) {
+    var anchor = document.createElement("a");
+    anchor.className = "header-link";
+    anchor.href      = "#" + id;
+    anchor.innerHTML = "<span class=\"sr-only\">Permalink</span><i class=\"fa fa-link\"></i>";
+    anchor.title = "Permalink";
+    return anchor;
+  };
+
+  var linkifyAnchors = function (level, containingElement) {
+    var headers = containingElement.getElementsByTagName("h" + level);
+    for (var h = 0; h < headers.length; h++) {
+      var header = headers[h];
+
+      if (typeof header.id !== "undefined" && header.id !== "") {
+        header.appendChild(anchorForId(header.id));
+      }
+    }
+  };
+
+  document.onreadystatechange = function () {
+    if (this.readyState === "complete") {
+      var contentBlock = document.getElementsByClassName("docs")[0] || document.getElementsByClassName("news")[0];
+      if (!contentBlock) {
+        return;
+      }
+      for (var level = 1; level <= 6; level++) {
+        linkifyAnchors(level, contentBlock);
+      }
+    }
+  };
+</script>
+
+  
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
+<script type="text/javascript"> docsearch({
+apiKey: '50fe39c839958dfad797000f33e2ec17',
+indexName: 'jekyllrb',
+inputSelector: '#docsearch-input',
+enhancedSearchInput: true,
+debug: false // Set debug to true if you want to inspect the dropdown
+});
+</script>
+
+</body>
+</html>
