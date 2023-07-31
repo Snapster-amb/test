@@ -1,1 +1,1 @@
-Sitemap: https://snapster-amb.github.io/test//sitemap.xml
+Sitemap: https://snapster-amb.github.io/test/sitemap.xml
