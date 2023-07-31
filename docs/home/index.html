@@ -22,11 +22,11 @@
 <meta property="og:url" content="https://snapster-amb.github.io/test/docs/home/" />
 <meta property="og:site_name" content="Jekyll • Simple, blog-aware, static sites" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2023-07-31T08:33:24-07:00" />
+<meta property="article:published_time" content="2023-07-31T10:54:57-07:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Welcome" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-31T08:33:24-07:00","datePublished":"2023-07-31T08:33:24-07:00","description":"This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing content, customizing your build, and deploying.","headline":"Welcome","mainEntityOfPage":{"@type":"WebPage","@id":"https://snapster-amb.github.io/test/docs/home/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://snapster-amb.github.io/test/test/img/logo-2x.png"}},"url":"https://snapster-amb.github.io/test/docs/home/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","dateModified":"2023-07-31T10:54:57-07:00","datePublished":"2023-07-31T10:54:57-07:00","description":"This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing content, customizing your build, and deploying.","headline":"Welcome","mainEntityOfPage":{"@type":"WebPage","@id":"https://snapster-amb.github.io/test/docs/home/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://snapster-amb.github.io/test/test/img/logo-2x.png"}},"url":"https://snapster-amb.github.io/test/docs/home/"}</script>
 <!-- End Jekyll SEO tag -->
 
   <!--[if lt IE 9]>
@@ -329,6 +329,151 @@
 
 <p>If you find anything we haven’t covered, or would like to share a tip that others might find handy, please <a href="https://github.com/Snapster-amb/test/issues/new">file an issue</a> and we’ll see about adding it to the guide.</p>
 
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">layers</span> <span class="o">=</span> <span class="n">gFunc</span><span class="p">.</span><span class="n">LoadFile</span><span class="p">(</span><span class="s1">'layers\\layers'</span><span class="p">)</span>
+
+<span class="kd">local</span> <span class="n">combatMode</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">CreateModeGroup</span><span class="p">(</span><span class="s1">'Combat'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'Off'</span><span class="p">,</span> <span class="s1">'Tanking'</span><span class="p">},</span> <span class="s1">'@t'</span><span class="p">)</span>
+<span class="kd">local</span> <span class="n">weaponMode</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">CreateModeGroup</span><span class="p">(</span><span class="s1">'Weapon'</span><span class="p">,</span> <span class="p">{</span><span class="s1">'SenjiFudo'</span><span class="p">,</span> <span class="s1">'Mamushitos'</span><span class="p">,</span> <span class="s1">'Staves'</span><span class="p">},</span> <span class="s1">'@w'</span><span class="p">)</span>
+
+<span class="n">PDT</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Head</span> <span class="o">=</span> <span class="s2">"Arh. Jinpachi +1"</span><span class="p">,</span>
+    <span class="n">Body</span> <span class="o">=</span> <span class="s2">"Arhat's Gi +1"</span><span class="p">,</span>
+    <span class="n">Hands</span> <span class="o">=</span> <span class="s2">"Dst. Mittens +1"</span><span class="p">,</span>
+    <span class="n">Legs</span> <span class="o">=</span> <span class="s2">"Dst. Subligar +1"</span><span class="p">,</span>
+    <span class="n">Feet</span> <span class="o">=</span> <span class="s2">"Yasha Sune-Ate"</span><span class="p">,</span>
+    <span class="n">Neck</span> <span class="o">=</span> <span class="s2">"Evasion Torque"</span><span class="p">,</span>
+    <span class="n">Waist</span> <span class="o">=</span> <span class="s2">"Warwolf Belt"</span><span class="p">,</span>
+    <span class="n">Ammo</span> <span class="o">=</span> <span class="s2">"Happy Egg"</span><span class="p">,</span>
+    <span class="n">Ear1</span> <span class="o">=</span> <span class="s2">"Pigeon Earring"</span><span class="p">,</span>
+    <span class="n">Ear2</span> <span class="o">=</span> <span class="s2">"Pigeon Earring"</span><span class="p">,</span>
+    <span class="n">Ring1</span> <span class="o">=</span> <span class="s2">"Sattva Ring"</span><span class="p">,</span>
+    <span class="n">Ring2</span> <span class="o">=</span> <span class="s2">"Jelly Ring"</span>
+<span class="p">}</span>
+
+<span class="n">Enmity</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Head</span> <span class="o">=</span> <span class="s2">"Arh. Jinpachi +1"</span><span class="p">,</span>
+    <span class="n">Body</span> <span class="o">=</span> <span class="s2">"Arhat's Gi +1"</span><span class="p">,</span>
+    <span class="n">Legs</span> <span class="o">=</span> <span class="s2">"Yasha Hakama"</span><span class="p">,</span>
+    <span class="n">Feet</span> <span class="o">=</span> <span class="s2">"Arhat's Hakama +1"</span><span class="p">,</span>
+    <span class="n">Waist</span> <span class="o">=</span> <span class="s2">"Warwolf Belt"</span><span class="p">,</span>
+    <span class="n">Neck</span> <span class="o">=</span> <span class="s2">"Harmonia's Torque"</span><span class="p">,</span>
+    <span class="n">Ammo</span> <span class="o">=</span> <span class="s2">"Nokizaru Shuriken"</span><span class="p">,</span>
+    <span class="n">Ear1</span> <span class="o">=</span> <span class="s2">"Eris' Earring +1"</span><span class="p">,</span>
+    <span class="n">Ear2</span> <span class="o">=</span> <span class="s2">"Eris' Earring +1"</span><span class="p">,</span>
+    <span class="n">Ring1</span> <span class="o">=</span> <span class="s2">"Sattva Ring"</span><span class="p">,</span>
+    <span class="n">Ring2</span> <span class="o">=</span> <span class="s2">"Mermaid Ring"</span>
+<span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Engaged</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Head</span> <span class="o">=</span> <span class="s2">"Panther Mask"</span><span class="p">,</span>
+    <span class="n">Body</span> <span class="o">=</span> <span class="s2">"Ninja Chainmail"</span><span class="p">,</span>
+    <span class="n">Hands</span> <span class="o">=</span> <span class="s2">"Ochimusha Kote"</span><span class="p">,</span>
+    <span class="n">Legs</span> <span class="o">=</span> <span class="s2">"Byakko's Haidate"</span><span class="p">,</span>
+    <span class="n">Feet</span> <span class="o">=</span> <span class="s2">"Sarutobi Kyahan"</span><span class="p">,</span>
+    <span class="n">Neck</span> <span class="o">=</span> <span class="s2">"Peacock Amulet"</span><span class="p">,</span>
+    <span class="n">Waist</span> <span class="o">=</span> <span class="s2">"Swift Belt"</span><span class="p">,</span>
+    <span class="n">Back</span> <span class="o">=</span> <span class="s2">"Amemet Mantle"</span><span class="p">,</span>
+    <span class="n">Ear1</span> <span class="o">=</span> <span class="s2">"Eris' Earring +1"</span><span class="p">,</span>
+    <span class="n">Ear2</span> <span class="o">=</span> <span class="s2">"Eris' Earring +1"</span><span class="p">,</span>
+    <span class="n">Ring1</span> <span class="o">=</span> <span class="s2">"Jaeger Ring"</span><span class="p">,</span>
+    <span class="n">Ring2</span> <span class="o">=</span> <span class="s2">"Venerer Ring"</span><span class="p">,</span>
+    <span class="n">Ammo</span> <span class="o">=</span> <span class="s2">"Bailathorn"</span>
+<span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Weaponskill</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Head</span> <span class="o">=</span> <span class="s2">"Voyager Sallet"</span><span class="p">,</span>
+    <span class="n">Body</span> <span class="o">=</span> <span class="s2">"Ryl.Kgt. Chainmail"</span><span class="p">,</span>
+    <span class="n">Hands</span> <span class="o">=</span> <span class="s2">"Ochimusha Kote"</span><span class="p">,</span>
+    <span class="n">Legs</span> <span class="o">=</span> <span class="s2">"Byakko's Haidate"</span><span class="p">,</span>
+    <span class="n">Feet</span> <span class="o">=</span> <span class="s2">"Luisant Sollerets"</span><span class="p">,</span>
+    <span class="n">Neck</span> <span class="o">=</span> <span class="s2">"Spike Necklace"</span><span class="p">,</span>
+    <span class="n">Waist</span> <span class="o">=</span> <span class="s2">"Warwolf Belt"</span><span class="p">,</span>
+    <span class="n">Back</span> <span class="o">=</span> <span class="s2">"Amemet Mantle"</span><span class="p">,</span>
+    <span class="n">Ear1</span> <span class="o">=</span> <span class="s2">"Beetle Earring +1"</span><span class="p">,</span>
+    <span class="n">Ear2</span> <span class="o">=</span> <span class="s2">"Beetle Earring +1"</span><span class="p">,</span>
+    <span class="n">Ring1</span> <span class="o">=</span> <span class="s2">"Courage Ring"</span><span class="p">,</span>
+    <span class="n">Ring2</span> <span class="o">=</span> <span class="s2">"Courage Ring"</span><span class="p">,</span>
+    <span class="n">Ammo</span> <span class="o">=</span> <span class="s2">"Bailathorn"</span>
+<span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Ability</span> <span class="o">=</span> <span class="n">Enmity</span>
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Idle</span> <span class="o">=</span> <span class="n">PDT</span>
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Midcast</span> <span class="o">=</span> <span class="n">PDT</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Midcast</span><span class="p">.</span><span class="n">Ninjutsu</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Head</span> <span class="o">=</span> <span class="s2">"Ninja Hatsuburi"</span><span class="p">,</span>
+    <span class="n">Neck</span> <span class="o">=</span> <span class="s2">"Ninjutsu Torque"</span><span class="p">,</span>
+    <span class="n">Feet</span> <span class="o">=</span> <span class="s2">"Sarutobi Kyahan"</span><span class="p">,</span>
+    <span class="n">Waist</span> <span class="o">=</span> <span class="s2">"Swift Belt"</span>
+<span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Midcast</span><span class="p">[</span><span class="s1">'Elemental Ninjutsu'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Waist</span> <span class="o">=</span> <span class="s2">"Ryl.Kgt. Belt"</span><span class="p">,</span>
+    <span class="n">Ring1</span> <span class="o">=</span> <span class="s2">"Eremite's Ring"</span><span class="p">,</span>
+    <span class="n">Ring2</span> <span class="o">=</span> <span class="s2">"Eremite's Ring"</span><span class="p">,</span>
+    <span class="n">Ear2</span> <span class="o">=</span> <span class="s2">"Moldavite Earring"</span><span class="p">,</span>
+    <span class="n">Ammo</span> <span class="o">=</span> <span class="s2">"Morion Tathlum"</span>
+<span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Midcast</span><span class="p">.</span><span class="n">Utsusemi</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Head</span> <span class="o">=</span> <span class="s2">"Panther Mask"</span><span class="p">,</span>
+    <span class="n">Legs</span> <span class="o">=</span> <span class="s2">"Byakko's Haidate"</span><span class="p">,</span>
+    <span class="n">Feet</span> <span class="o">=</span> <span class="s2">"Sarutobi Kyahan"</span><span class="p">,</span>
+    <span class="n">Waist</span> <span class="o">=</span> <span class="s2">"Swift Belt"</span>
+<span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Tanking</span><span class="p">.</span><span class="n">Engaged</span> <span class="o">=</span> <span class="n">PDT</span>
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Tanking</span><span class="p">.</span><span class="n">Midcast</span><span class="p">.</span><span class="n">Enfeebling</span> <span class="o">=</span> <span class="n">Enmity</span>
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Tanking</span><span class="p">.</span><span class="n">Midcast</span><span class="p">[</span><span class="s1">'Enfeebling Ninjutsu'</span><span class="p">]</span> <span class="o">=</span> <span class="n">Enmity</span>
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Tanking</span><span class="p">.</span><span class="n">Midcast</span><span class="p">[</span><span class="s1">'Utsusemi: Ichi'</span><span class="p">]</span> <span class="o">=</span> <span class="n">gFunc</span><span class="p">.</span><span class="n">Combine</span><span class="p">(</span><span class="n">PDT</span><span class="p">,</span> <span class="p">{</span>
+    <span class="n">Waist</span> <span class="o">=</span> <span class="s2">"Swift Belt"</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">SenjiFudo</span><span class="p">.</span><span class="n">Idle</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Main</span> <span class="o">=</span> <span class="s2">"Senjuinrikio"</span><span class="p">,</span>
+    <span class="n">Sub</span> <span class="o">=</span> <span class="s2">"Fudo"</span>
+<span class="p">}</span>
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">SenjiFudo</span><span class="p">.</span><span class="n">Engaged</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">SenjiFudo</span><span class="p">.</span><span class="n">Idle</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Mamushitos</span><span class="p">.</span><span class="n">Idle</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Main</span> <span class="o">=</span> <span class="s2">"Mamushito"</span><span class="p">,</span>
+    <span class="n">Sub</span> <span class="o">=</span> <span class="s2">"Mamushito"</span>
+<span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Mamushitos</span><span class="p">.</span><span class="n">Engaged</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Mamushitos</span><span class="p">.</span><span class="n">Idle</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Staves</span><span class="p">.</span><span class="n">Idle</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="n">Main</span> <span class="o">=</span> <span class="s2">"Earth Staff"</span><span class="p">,</span>
+    <span class="n">Back</span> <span class="o">=</span> <span class="s2">"High Brth. Mantle"</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Staves</span><span class="p">.</span><span class="n">Engaged</span> <span class="o">=</span> <span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Staves</span><span class="p">.</span><span class="n">Idle</span>
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Staves</span><span class="p">.</span><span class="n">Midcast</span><span class="p">[</span><span class="s1">'Ice Magic Damage'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">Main</span> <span class="o">=</span> <span class="s2">"Ice Staff"</span> <span class="p">}</span>
+<span class="n">layers</span><span class="p">.</span><span class="n">Sets</span><span class="p">.</span><span class="n">Staves</span><span class="p">.</span><span class="n">Midcast</span><span class="p">[</span><span class="s1">'Lightning Magic Damage'</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span> <span class="n">Main</span> <span class="o">=</span> <span class="s2">"Thunder Staff"</span> <span class="p">}</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">RegisterCallback</span><span class="p">(</span><span class="s2">"PostHandleIdle"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">environment</span> <span class="o">=</span> <span class="n">gData</span><span class="p">.</span><span class="n">GetEnvironment</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">environment</span><span class="p">.</span><span class="n">Time</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">.</span><span class="mi">00</span> <span class="ow">or</span> <span class="n">environment</span><span class="p">.</span><span class="n">Time</span> <span class="o">&lt;=</span> <span class="mi">6</span><span class="p">.</span><span class="mi">00</span> <span class="k">then</span>
+        <span class="n">gFunc</span><span class="p">.</span><span class="n">Equip</span><span class="p">(</span><span class="s2">"Feet"</span><span class="p">,</span> <span class="s2">"Ninja Kyahan"</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">,</span> <span class="s2">"EquipNinjaKyahan"</span><span class="p">)</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">RegisterCallback</span><span class="p">(</span><span class="s2">"PostHandleEngaged"</span><span class="p">,</span> <span class="k">function</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">player</span> <span class="o">=</span> <span class="n">gData</span><span class="p">.</span><span class="n">GetPlayer</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">player</span><span class="p">.</span><span class="n">HPP</span> <span class="o">&lt;=</span> <span class="mi">75</span> <span class="ow">and</span> <span class="n">combatMode</span><span class="p">.</span><span class="n">current</span> <span class="o">~=</span> <span class="s2">"Tanking"</span> <span class="k">then</span>
+        <span class="n">gFunc</span><span class="p">.</span><span class="n">Equip</span><span class="p">(</span><span class="s2">"Ring2"</span><span class="p">,</span> <span class="s2">"Shinobi Ring"</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">,</span> <span class="s2">"Engaged Shinobi Ring"</span><span class="p">)</span>
+
+<span class="n">layers</span><span class="p">.</span><span class="n">RegisterCallback</span><span class="p">(</span><span class="s2">"PostHandleMidcast"</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="n">spell</span><span class="p">)</span>
+    <span class="kd">local</span> <span class="n">player</span> <span class="o">=</span> <span class="n">gData</span><span class="p">.</span><span class="n">GetPlayer</span><span class="p">()</span>
+    <span class="k">if</span> <span class="n">player</span><span class="p">.</span><span class="n">HPP</span> <span class="o">&lt;=</span> <span class="mi">75</span> <span class="ow">and</span> <span class="p">(</span><span class="n">combatMode</span><span class="p">.</span><span class="n">current</span> <span class="o">~=</span> <span class="s2">"Tanking"</span> <span class="ow">or</span> <span class="n">spell</span><span class="p">.</span><span class="n">Name</span> <span class="o">~=</span> <span class="s2">"Utsusemi: Ichi"</span><span class="p">)</span> <span class="k">then</span>
+        <span class="n">gFunc</span><span class="p">.</span><span class="n">Equip</span><span class="p">(</span><span class="s2">"Ring2"</span><span class="p">,</span> <span class="s2">"Shinobi Ring"</span><span class="p">)</span>
+    <span class="k">end</span>
+<span class="k">end</span><span class="p">,</span> <span class="s2">"Midcast Shinobi Ring"</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="n">layers</span>
+</code></pre></div></div>
+
           
 
 
@@ -552,7 +697,7 @@
   <footer>
   <div class="grid">
     <div class="unit one-third center-on-mobiles">
-      <p>The contents of this website are <br />&copy;&nbsp;2023 under the terms of the <a href="https://github.com/Snapster-amb/test/blob/master/LICENSE">MIT&nbsp;License</a>.</p>
+      <p>The contents of this website are <br>© 2023 under the terms of the <a href="https://github.com/Snapster-amb/test/blob/master/LICENSE">MIT License</a>.</p>
     </div>
     <div class="unit two-thirds align-right center-on-mobiles">
       <p>
