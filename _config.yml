@@ -6,7 +6,7 @@ timezone: America/Los_Angeles
 url: "https://snapster-amb.github.io"
 repository: "https://github.com/Snapster-amb/test"
 logo: "/test/img/logo-2x.png"
-baseurl: ""
+baseurl: "/test"
 collections:
   docs:
     permalink: "/:collection/:path/"

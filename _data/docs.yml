@@ -1,53 +1,33 @@
-- title: Getting Started
+- title: Basics
   docs:
   - home
-  - quickstart
+  - explore
+  - classifiers
+  - events
+  - declarations
+  - elements
   - installation
-  - windows
-  - usage
-  - structure
-  - configuration
 
-- title: Your Content
+- title: Advanced
   docs:
-  - frontmatter
-  - posts
-  - drafts
-  - pages
-  - static-files
-  - variables
-  - collections
-  - datafiles
-  - assets
-  - migrations
+  - environment
+  - layers
+  - level-sync
 
-- title: Customization
+- title: Taxonomy
   docs:
-  - templates
-  - includes
-  - permalinks
-  - pagination
-  - plugins
-  - themes
-  - extras
+  - ability
+  - item
+  - pet
+  - petweaponskill
+  - spell
+  - weaponskill
 
-- title: Deployment
+- title: Reference
   docs:
-  - github-pages
-  - deployment-methods
-  - continuous-integration
-
-- title: Miscellaneous
-  docs:
-  - troubleshooting
-  - sites
-  - resources
-  - upgrading/0-to-2
-  - upgrading/2-to-3
-
-- title: Meta
-  docs:
-  - contributing
-  - maintaining
-  - conduct
-  - history
+  - ability
+  - blood-pact
+  - item
+  - magic
+  - ready-move
+  - wyvern-breath

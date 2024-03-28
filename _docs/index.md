@@ -4,15 +4,124 @@ permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
 
-This site aims to be a comprehensive guide to Jekyll. We’ll cover topics such as getting your site up and running, creating and managing content, customizing your build, and deploying.
+This site aims to be a comprehensive guide to Baklava. We'll review the basic concepts behind the library, how to get a simple job file set up, and explore some features more in-depth.
 
-## What is Jekyll, exactly?
+## What is Baklava?
 
-Jekyll is a simple, blog-aware, static site generator.
+Baklava is an extension to [LuAshitacast](https://github.com/ThornyFFXI/LuAshitacast) and [GearSwap](https://docs.windower.net/addons/gearswap/) that supports taxonomical set declaration, layered gear sets with convenient keybindings, level sync support, and several other convenient features aimed at reducing the effort required to create a robust and functional job file.
 
-You create your content as text files ([Markdown](https://daringfireball.net/projects/markdown/)), and organize them into folders. Then, you build the shell of your site using [Liquid](https://shopify.github.io/liquid/)-enhanced HTML templates. Jekyll automatically stitches the content and templates together, generating a website made entirely of static assets, suitable for uploading to any server.
+## What does all of that mean?
 
-Jekyll happens to be the engine behind [GitHub Pages](https://pages.github.com), so you can host your project’s Jekyll page/blog/website on GitHub’s servers **for free**.
+Sometimes it's easier to learn by example. Consider how we want to itemize for Elemental Magic. We will only differentiate between elemental enfeebles and other elemental magic for brevity. Doing this could lead to the following LuAshitacast code.
+
+```lua
+profile.HandleMidcast = function()
+    local spell = gData.GetAction()
+    if spell.Skill == 'Elemental Magic' then
+        if (spell.Name == 'Burn' or
+            spell.Name == 'Choke' or
+            spell.Name == 'Drown' or
+            spell.Name == 'Frost' or
+            spell.Name == 'Rasp' or
+            spell.Name == 'Shock') then 
+            gFunc.EquipSet({
+                Ear1 = "Elemental Earring"
+            })
+        else
+            gFunc.EquipSet({
+                Ear1 = "Moldavite Earring"
+            })
+        end
+    end
+end
+```
+
+The skill and name conditionals to determine which gear to equip are nested in the midcast function. The code can become complicated and challenging to maintain as you get more equipment and optimize more spells.
+
+The corresponding Baklava declarations are more concise and easier to understand.
+
+```lua
+cake.Sets.Midcast['Elemental Magic'] = {
+    Ear1 = "Moldavite Earring"
+}
+
+cake.Sets.Midcast['Enfeebling Elemental Magic'] = {
+    Ear1 = "Elemental Earring"
+}
+```
+
+There are no skill or name conditionals or other procedural code. We have focused solely on stating what we want rather than how we want it to happen. This model is easier to work with, approachable to those with limited or no coding experience, and less time-consuming to debug.
+
+<!--<div class="note info">
+  <h5>But I like coding!</h5>
+  <p>Baklava is also extendible.  If something specific you'd like to do is tricky to handle declaratively, you can always tag on some imperative code before or after Baklava handles the set declarations.</p>
+</div>
+
+
+```lua
+profile.HandleMidcast = function()
+    local spell = gData.GetAction()
+    if spell.Skill == 'Enfeebling Magic' then
+        local mndEnfeebles = {
+            ['Slow'] = true,
+            ['Slow II'] = true,
+            ['Paralyze'] = true,
+            ['Paralyze II'] = true,
+            ['Silence'] = true,
+            ['Indunation'] = true,
+            ['Addle'] = true,
+            ['Addle II'] = true
+        }
+        local enfeeblingBaseSet = {
+            Neck = 'Enfeebling Torque'
+        }
+        if mndEnfeebles[spell.Name] then
+            enfeeblingBaseSet = gFunc.Combine(enfeeblingBaseSet, {
+                Ring1 = 'Aqua Ring',
+                Ring2 = 'Aqua Ring'
+            })
+        else
+            enfeeblingBaseSet = gFunc.Combine(enfeeblingBaseSet, {
+                Ring1 = 'Snow Ring',
+                Ring2 = 'Snow Ring'
+            })
+        end
+        gFunc.EquipSet(enfeeblingBaseSet)
+        if spell.Element == 'Earth' then
+            gFunc.Equip('Main', 'Earth Staff')
+        elseif spell.Element == 'Ice' then
+            gFunc.Equip('Main', 'Ice Staff')
+        else
+            gFunc.Equip('Main', 'Mistilteinn')
+        end
+    end
+end
+```
+
+The corresponding Baklava code is simpler and easier to understand.
+
+```lua
+cake.Sets.Midcast['Enfeebling Magic'] = {
+    Main = 'Mistilteinn',
+    Neck = 'Enfeebling Torque'
+}
+cake.Sets.Midcast['Dark Magic Enfeebling'] = {
+    Ring1 = 'Snow Ring',
+    Ring2 = 'Snow Ring'
+}
+cake.Sets.Midcast['White Magic Enfeebling'] = {
+    Ring1 = 'Aqua Ring',
+    Ring2 = 'Aqua Ring'
+}
+cake.Sets.Midcast['Ice Enfeeblement'] = {
+    Main = 'Ice Staff'
+}
+cake.Sets.Midcast['Earth Enfeeblement'] = {
+    Main = 'Earth Staff'
+}
+```
+
+Something about declarative code.
 
 ## Navigating the Guide
 
@@ -46,7 +155,7 @@ local layers = gFunc.LoadFile('layers\\layers')
 local combatMode = layers.CreateModeGroup('Combat', {'Off', 'Tanking'}, '@t')
 local weaponMode = layers.CreateModeGroup('Weapon', {'SenjiFudo', 'Mamushitos', 'Staves'}, '@w')
 
-PDT = {
+local PDT = {
     Head = "Arh. Jinpachi +1",
     Body = "Arhat's Gi +1",
     Hands = "Dst. Mittens +1",
@@ -61,7 +170,7 @@ PDT = {
     Ring2 = "Jelly Ring"
 }
 
-Enmity = {
+local Enmity = {
     Head = "Arh. Jinpachi +1",
     Body = "Arhat's Gi +1",
     Legs = "Yasha Hakama",
@@ -185,3 +294,4 @@ end, "Midcast Shinobi Ring")
 
 return layers
 ```
+-->
